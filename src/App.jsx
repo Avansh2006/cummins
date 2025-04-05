@@ -1,25 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './coponents/navbar'
-import TravelPage from './coponents/comp1'
-import { Router, Routes, Route } from 'react-router-dom'
+import {Routes, Route } from 'react-router-dom'
 import Home from './coponents/home'
+import BlogWritingPage from './coponents/blog'
+import SubscriptionPage from './coponents/subscription'
+import PaymentForm from './coponents/Payment'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Router>
+    
       <Navbar />
+      <div className='h-screen'>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<TravelPage />} />
-        <Route path="/about" element={<TravelPage />} />
-        <Route path="/contact" element={<TravelPage />} />
+        <Route path="/BlogWritingPage" element={<BlogWritingPage />} />
+        <Route path="/SubscriptionPage" element={<SubscriptionPage />} />
+        <Route path="/PaymentForm" element={<PaymentForm />} />
       </Routes>
-    </Router>
+      </div>
+    
     </>
   )
 }
